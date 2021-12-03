@@ -1,11 +1,11 @@
 ﻿/*
  * Line Comparison-
- * Check Equality of Two Lines
+ * Compare of Two Lines
  */
 
 int x1, x2, y1, y2, a1, a2, b1, b2;
 Double FirstLine, SecondLine, length1, length2;
-Console.WriteLine("**********-> Check Two Lines are Equal or Not <-**********");
+Console.WriteLine("**********-> Compare Two Lines <-**********");
 
 //First Line Coordinates
 Console.WriteLine("Enter values of the coordinates for first line(x1,y1,x2,y2)");
@@ -32,11 +32,17 @@ SecondLine = Math.Sqrt(Math.Pow(a2 - a1, 2)) + (Math.Pow(b2 - b1, 2)); //Calcula
 length2 = Math.Round(SecondLine, 2);
 Console.WriteLine("Length of the Second line is: " + length2);
 
-if (length1.Equals(length2))
+int compare_value = length1.CompareTo(length2);
+
+if (compare_value == 0)
 {
-    Console.WriteLine("Value of both the lines are equal\n\n");
+    Console.WriteLine("Both  lines are equal\n\n");
 }
-else
+else if (compare_value < 0)
 {
-    Console.WriteLine("Value of both the lines are not equal\n\n");
+    Console.WriteLine("First Line is less than Second Line\n\n");
+}
+else if (compare_value > 0)
+{
+    Console.WriteLine("First Line is Greater than Second Line\n\n");
 }
